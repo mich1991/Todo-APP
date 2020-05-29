@@ -1,32 +1,34 @@
 import React from "react";
 const Task = (props) => {
-  const { text, date, id, important, active, finishDate } = props.task;
-
-  const styleImportant = {
+  let finishStyle = {
     color: "red",
+    fontSize: 10,
   };
-  if (active) {
+  if (props.task.active) {
     return (
       <div>
-        <b style={important && active ? styleImportant : null}>{text}</b> do{" "}
-        {date}
-        <button className="complete" onClick={() => props.change(id)}>
-          DONE
-        </button>{" "}
-        <button className="delete" onClick={() => props.delete(id)}>
+        <p>
+          <b>{props.task.text}</b> to : {props.task.date}
+        </p>
+        <button id="done" onClick={() => props.change(props.task.id)}>
+          Done
+        </button>
+        <button id="delete" onClick={() => props.delete(props.task.id)}>
           X
         </button>
       </div>
     );
   } else {
-    const finish = new Date(finishDate).toLocaleDateString();
+    const finish = new Date(props.task.finishDate).toISOString().slice(0, 10);
     return (
       <div>
-        <b>{text}</b> do {date}
-        <button className="delete" onClick={() => props.delete(id)}>
+        <p>
+          <b>{props.task.text}</b> to : {props.task.date}
+        </p>
+        <button id="delete" onClick={() => props.delete(props.task.id)}>
           X
         </button>
-        <p>finished at - {finish}</p>
+        <span style={finishStyle}>finished at {finish}</span>
       </div>
     );
   }

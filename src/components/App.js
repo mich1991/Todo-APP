@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import AddTask from "./AddTask";
 import TaskList from "./TaskList";
+import Footer from "./Footer";
 import uuid from "uuid";
 import "./App.css";
 
@@ -81,29 +82,29 @@ class App extends Component {
       },
     ],
   };
-  addTask = (e) => {
-    e.preventDefault();
-    console.log(e);
-  };
 
-  // deleteTask = (id) => {
-  //   const tasks = [...this.state.tasks];
-  //   const index = tasks.findIndex((task) => task.id === id);
-  //   console.log(index);
-  //   tasks.splice(index, 1);
-  //   this.setState({
-  //     tasks,
-  //   });
-  // };
-  deleteTask = (id) => {
+  addTask = (text, date, important) => {
+    let task = {
+      id: uuid(),
+      text: text,
+      date: date,
+      important: important,
+      active: true,
+      finishDate: null,
+    };
+    this.setState({
+      tasks: [...this.state.tasks, task],
+    });
+    return true;
+  };
+  handleDelete = (id) => {
     let tasks = [...this.state.tasks];
     tasks = tasks.filter((task) => task.id !== id);
     this.setState({
       tasks,
     });
   };
-  changeTaskStatus = (id) => {
-    console.log(id);
+  handleChangeStatus = (id) => {
     let tasks = [...this.state.tasks];
     tasks.forEach((task) => {
       if (task.id === id) {
@@ -115,20 +116,26 @@ class App extends Component {
       tasks,
     });
   };
+
   render() {
     return (
       <>
         <header>
-          <h1>Todo APP</h1>
-          <AddTask state={this.addTask} addTask={this.addTask} />
+          <h1>Todo app</h1>
+          <AddTask addTask={this.addTask} />
         </header>
+        <hr />
         <main>
+          <p>Todo List</p>
           <TaskList
             tasks={this.state.tasks}
-            change={this.changeTaskStatus}
-            delete={this.deleteTask}
+            delete={this.handleDelete}
+            change={this.handleChangeStatus}
           />
         </main>
+        <footer>
+          <Footer />
+        </footer>
       </>
     );
   }
