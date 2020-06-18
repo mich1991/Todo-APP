@@ -1,0 +1,14 @@
+.taskList__title {
+    color: rgb(243, 226, 226);
+    background-color: rgb(143,
+            56,
+            243);
+}
+
+.taskList__title:first-child {
+    margin-bottom: 12px;
+}
+
+.taskList__title:last-child {
+    margin-top: 12px;
+}

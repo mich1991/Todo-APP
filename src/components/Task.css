@@ -1,0 +1,54 @@
+.task {
+    display: flex;
+    width: 100%;
+    margin: 10px;
+}
+
+.task__text {
+    flex-grow: 1;
+    line-height: 50px;
+    font-size: 1.2rem;
+}
+
+.task .task__button {
+    flex-basis: 80px;
+    max-width: 80px;
+    min-width: 40px;
+    margin: auto 20px auto 0;
+    height: 45px;
+    flex-grow: 1;
+    border: solid 2px rgb(222, 184, 135);
+    border-radius: 5px;
+    box-shadow: 3px 1px 2px 2px rgb(127, 93, 196);
+    font-weight: 600;
+    font-family: cursive;
+    cursor: pointer;
+
+}
+
+.task__button--delete {
+    background-color: red;
+    color: rgb(255, 255, 255);
+}
+
+.task__button--done {
+    background-color: rgb(127, 93, 196);
+    color: rgb(222, 184, 135);
+}
+
+
+.task__confirm {
+    /* display: block; */
+
+}
+
+@media(max-width: 600px) {
+    .task {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .task__text {
+        flex-basis: 100%;
+    }
+}

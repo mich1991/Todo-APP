@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './AddTask.css'
 
 class AddTask extends Component {
   state = {
@@ -39,30 +40,29 @@ class AddTask extends Component {
   render() {
     return (
       <>
-        <form>
-          <label htmlFor="taskName">
+        <h1 className='header'> Todo App</h1>
+        <form className='addTask'>
+          <label className='addTask__item' htmlFor="taskName">
             Task Name
-            <input
+            <input className='addTask__input'
               type="text"
               id="taskName"
               value={this.state.text}
               onChange={this.handleTextChange}
             />
           </label>
-          <br />
-          <label htmlFor="checkbox">
+          <label className='addTask__item' htmlFor="checkbox">
             Important?{" "}
-            <input
+            <input className='addTask__input addTask__input--checkbox'
               type="checkbox"
               id="checkbox"
               onChange={this.handleCheckedChange}
               checked={this.state.checked}
             />
           </label>
-          <br />
-          <label htmlFor="date">
+          <label className='addTask__item' htmlFor="date">
             Finish date:{" "}
-            <input
+            <input className='addTask__input'
               type="date"
               id="date"
               min={this.minDate}
@@ -71,7 +71,7 @@ class AddTask extends Component {
             />
           </label>
           <br />
-          <button onClick={this.handleAddClick}>Add task</button>
+          <button className='addTask__button' onClick={this.handleAddClick}>Add task</button>
         </form>
       </>
     );

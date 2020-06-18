@@ -1,0 +1,63 @@
+.header {
+    background-color: rgb(127, 93, 196);
+    color: rgb(238, 218, 188);
+}
+
+
+.addTask {
+    text-align: center;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    border: solid 3px rgb(66, 64, 64);
+    padding: 5px;
+    max-width: 800px;
+}
+
+.addTask__item {
+    display: flex;
+    flex-direction: column;
+    margin: 0 5px 5px 0;
+    text-transform: uppercase;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    text-shadow: 1px, 2px royalblue;
+    flex: 1 1;
+}
+
+.addTask__item:nth-child(2) {
+    margin-right: 10px;
+}
+
+.addTask__input {
+    line-height: 30px;
+    font-weight: 600;
+}
+
+.addTask__input--checkbox {
+    margin-top: 10px;
+}
+
+.addTask__button {
+    max-width: 80px;
+    min-width: 40px;
+    margin: auto 0 auto 20px;
+    height: 45px;
+    flex-grow: 1;
+    border: solid 2px rgb(222, 184, 135);
+    border-radius: 5px;
+    box-shadow: 3px 1px 2px 2px rgb(127, 93, 196);
+    font-weight: 600;
+    font-family: cursive;
+
+}
+
+@media(max-width : 500px) {
+    .addTask {
+        flex-wrap: wrap;
+    }
+
+    .addTask__item {
+        flex-basis: 40%;
+    }
+}

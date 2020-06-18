@@ -1,5 +1,8 @@
 import React from "react";
 import Task from "./Task";
+import './TaskList.css'
+
+
 const TaskList = (props) => {
   let activeTasks = props.tasks.filter((task) => task.active);
   let doneTasks = props.tasks.filter((task) => !task.active);
@@ -10,6 +13,7 @@ const TaskList = (props) => {
       task={task}
       delete={props.delete}
       change={props.change}
+      className='taskList'
     />
   ));
   activeTasks = activeTasks.map((task) => (
@@ -18,14 +22,14 @@ const TaskList = (props) => {
       task={task}
       delete={props.delete}
       change={props.change}
+      className='taskList'
     />
   ));
   return (
     <>
-      <h1>Todo List</h1>
+      <h1 className='taskList__title'>Todo List</h1>
       {activeTasks}
-      <hr />
-      <h1>Finished tasks</h1>
+      <h1 className='taskList__title'>Finished tasks</h1>
       {doneTasks}
     </>
   );

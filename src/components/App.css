@@ -1,39 +1,5 @@
 * {
   margin: 0;
   padding: 0;
-}
-
-body {
   text-align: center;
-  overflow: hidden;
-  background-color: #ddd;
-}
-
-main div {
-  margin-left: 15px;
-  display: flex;
-  flex-direction: column;
-
-}
-
-button {
-  min-width: 20px;
-  text-transform: uppercase;
-  background-color: #77db12;
-}
-
-button#done {
-  background-color: #77db12;
-  border-radius: 10%;
-  position: absolute;
-  right: 5%;
-}
-
-button#delete {
-  position: absolute;
-  right: 0;
-  background-color: red;
-  color: #ddd;
-  padding: 10px, 5px;
-  margin: 0 10px
 }

@@ -1,7 +1,7 @@
 import React from "react";
 import "./Footer.css";
 const Footer = () => {
-  return <p>I am a footer</p>;
+  return <p>Made by Michal Wozniak</p>;
 };
 
 export default Footer;

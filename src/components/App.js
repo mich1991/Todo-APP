@@ -10,7 +10,7 @@ class App extends Component {
     tasks: [
       {
         id: uuid(),
-        text: "zagrać wreszcie w Wiedźmina 3",
+        text: "Lorem ipsum dolor sit amet.",
         date: "2018-02-15",
         important: true,
         active: true,
@@ -18,7 +18,7 @@ class App extends Component {
       },
       {
         id: uuid(),
-        text: "zrobić dobry uczynej",
+        text: "Duis nec rhoncus nibh.",
         date: "2020-11-12",
         important: false,
         active: true,
@@ -26,7 +26,7 @@ class App extends Component {
       },
       {
         id: uuid(),
-        text: "pomalować dom po sylwestrze",
+        text: "Cras eu tellus magna.",
         date: "2019-09-11",
         important: false,
         active: true,
@@ -34,7 +34,7 @@ class App extends Component {
       },
       {
         id: uuid(),
-        text: "schudnąć 30 kilogramów",
+        text: "Maecenas dignissim",
         date: "2019-05-20",
         important: true,
         active: true,
@@ -42,7 +42,7 @@ class App extends Component {
       },
       {
         id: uuid(),
-        text: "sprzedać butelki po piwie (20 skrzynek)",
+        text: "Nullam sed nibh felis",
         date: "2020-11-12",
         important: false,
         active: true,
@@ -50,7 +50,7 @@ class App extends Component {
       },
       {
         id: uuid(),
-        text: "jeszcze raz pomalować dom",
+        text: "Quisque viverra",
         date: "2019-09-11",
         important: false,
         active: true,
@@ -58,7 +58,7 @@ class App extends Component {
       },
       {
         id: uuid(),
-        text: "fryzjer!!!",
+        text: "In hac habitasse platea dictumst",
         date: "2019-05-20",
         important: true,
         active: true,
@@ -66,7 +66,7 @@ class App extends Component {
       },
       {
         id: uuid(),
-        text: "nie odbierać poleconego od komornika",
+        text: "Nunc mattis euismod dolor quis commodo.",
         date: "2020-11-12",
         important: false,
         active: true,
@@ -74,7 +74,7 @@ class App extends Component {
       },
       {
         id: uuid(),
-        text: "kupić 2 butelki litrowe",
+        text: "Pellentesque commodo vel urna vitae placerat.",
         date: "2019-09-11",
         important: false,
         active: true,
@@ -120,13 +120,8 @@ class App extends Component {
   render() {
     return (
       <>
-        <header>
-          <h1>Todo app</h1>
-          <AddTask addTask={this.addTask} />
-        </header>
-        <hr />
+        <AddTask addTask={this.addTask} />
         <main>
-          <p>Todo List</p>
           <TaskList
             tasks={this.state.tasks}
             delete={this.handleDelete}
